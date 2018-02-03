@@ -1,3 +1,3 @@
-export const API_START = 'API_START';
-export const API_DONE = 'API_DONE';
-export const API = 'API';
+export const API_START: string = 'API_START';
+export const API_DONE: string = 'API_DONE';
+export const API: string = 'API';

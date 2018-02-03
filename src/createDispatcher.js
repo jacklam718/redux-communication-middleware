@@ -20,7 +20,7 @@ export default (dispatch: Function, action: Object) => ({
     dispatch(apiPending(action.payload.next.PENDING));
   },
 
-  error(error?: Object): Object {
+  error(error: Object): Object {
     dispatch(apiDone(error));
     dispatch(apiError(action.payload.next.ERROR, error));
     return error;
