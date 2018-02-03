@@ -1,0 +1,24 @@
+{
+  "name": "redux-network-middleware",
+  "version": "0.0.1",
+  "description": "A redux middleware for api response, error handling.",
+  "main": "dist/index.js",
+  "repository": "git@github.com:jacklam718/redux-network-middleware.git",
+  "author": "jacklam718 <jacklam718@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "eslint": "^4.15.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}
