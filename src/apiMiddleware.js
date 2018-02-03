@@ -5,21 +5,20 @@ import API from './constants';
 /*
   A apiMiddleware support action callbacks and centralized all api success, error handling strategy
 */
-export default ({ dispatch }) => next => (action) => {
+export const apiMiddlewareFactory = (api: () => Promise) => ({ dispatch }) => next => (action) => {
   const dispatcher = createDispatcher(dispatch, action);
 
   // handle all api calls
   if (API === action.type) {
     dispatcher.start();
 
-    requester({ ...action.payload })
+    api({ ...action.payload })
       .then(dispatcher.success)
       .then(dispatcher.notify)
-      .catch(({ message, response }) => dispatcher.error({
-        status: response.status,
-        message,
-      }));
+      .catch(dispatcher.error);
   }
 
   next(action);
 };
+
+export default apiMiddlewareFactory(requester);
