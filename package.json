@@ -1,6 +1,6 @@
 {
   "name": "redux-network-middleware",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A redux middleware for api response, error handling.",
   "main": "dist/index.js",
   "repository": "git@github.com:jacklam718/redux-network-middleware.git",
