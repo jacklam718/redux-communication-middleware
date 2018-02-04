@@ -5,22 +5,22 @@ A redux  network middleware for handling api call and response.
 ### Installation
 `yarn add redux-network-middleware`
 
-### Usage
+### Usage - Api Middleware
 ```
 import { applyMiddleware, createStore } from 'redux';
 
-// Network middleware with default api client
-import network from 'redux-network-middleware'
+// api middleware with default api client
+import { apiMiddleware } from 'redux-network-middleware'
 const store = createStore(
   reducer,
-  applyMiddleware(network),
+  applyMiddleware(apiMiddleware),
 );
 ```
 Or you can create your own network middleware with custom
 ```
 import { applyMiddleware, createStore } from 'redux';
 
-// Network middleware with custom api client
+// api middleware with custom api client
 import { apiMiddlewareFactory } from 'redux-network-middleware'
 
 const api = (options) => {
@@ -29,6 +29,6 @@ const api = (options) => {
 
 const store = createStore(
   reducer,
-  applyMiddleware(api),
+  applyMiddleware(apiMiddlewareFactory(api)),
 );
 ```
