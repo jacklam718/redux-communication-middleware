@@ -3,13 +3,13 @@
 import { apiSuccess, apiPending, apiError, apiStart, apiDone } from './actions';
 
 export default (dispatch: Function, action: Object) => ({
-  success(data?: any): any {
+  success(data: Object): Object {
     dispatch(apiDone());
     dispatch(apiSuccess(action.payload.next.SUCCESS, data));
     return data;
   },
 
-  notify(data?: any): any {
+  notify(data: Object): Object {
     (action.payload.success || [])
       .forEach(callback => dispatch(callback(data)));
     return data;
