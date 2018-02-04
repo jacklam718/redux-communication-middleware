@@ -1,6 +1,6 @@
 {
   "name": "redux-network-middleware",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A redux middleware for api response, error handling.",
   "main": "dist/index.js",
   "repository": "git@github.com:jacklam718/redux-network-middleware.git",
@@ -11,6 +11,14 @@
     "clean": "rimraf dist",
     "build": "npm run clean && babel src/ -d dist/"
   },
+  "keywords": [
+    "redux",
+    "redux middleware",
+    "redux api middleware",
+    "redux network middleware",
+    "api middleware",
+    "network middleware"
+  ],
   "dependencies": {
     "axios": "^0.17.1",
     "eslint": "^4.15.0"
