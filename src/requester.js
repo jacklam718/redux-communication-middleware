@@ -17,7 +17,7 @@ export default async ({
   method: string,
   data?: Object,
   headers?: Object,
-}): Promise => {
+}): Promise<Object> => {
   const options = {
     url: endpoint,
     method,
