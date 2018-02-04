@@ -9,10 +9,9 @@ import { API } from './constants';
 */
 export const apiMiddlewareFactory = (api: (any) => Promise<Object>): Function => (
   ({ dispatch }) => next => (action) => {
-    const dispatcher = createDispatcher(dispatch, action);
-
     // handle all api calls
     if (API === action.type) {
+      const dispatcher = createDispatcher(dispatch, action);
       dispatcher.start();
 
       api({ ...action.payload })
