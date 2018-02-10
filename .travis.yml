@@ -11,7 +11,7 @@ after_success:
   - rm -rf build &&
     yarn build &&
     mkdir build &&
-    cp -r src build/dist &&
+    cp -r src build/src &&
     cp -r dist build/dist &&
     cp LICENSE README.md package.json build
 before_deploy:
