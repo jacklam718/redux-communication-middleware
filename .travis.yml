@@ -1,0 +1,23 @@
+language: node_js
+cache:
+  yarn: true
+  directories:
+    - node_modules
+before_install:
+  - npm install -g yarn --cache-min "999999999"
+node_js: '8'
+install: yarn
+after_success:
+  - rm -rf build &&
+    cp -r dist build &&
+    cp LICENSE README.md package.json build
+before_deploy:
+  cd build
+deploy:
+  - provider: npm
+    skip_cleanup: true
+    email: jacklam718@gmail.com
+    api_key: $NPM_TOKEN
+    on:
+      tags: true
+      repo: jacklam718/redux-network-middleware
