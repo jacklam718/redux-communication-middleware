@@ -4,8 +4,11 @@ import requester from './requester';
 import createDispatcher from './createDispatcher';
 import { API_GET, API_POST, API_PUT, API_DELETE } from './constants';
 
-const isApiAction = (type: string) => [API_GET, API_POST, API_PUT, API_DELETE].includes(type);
-const apiTypeToMethod = (type: string) => {
+const isApiAction = (type: string): boolean => (
+  [API_GET, API_POST, API_PUT, API_DELETE].includes(type)
+);
+
+const apiTypeToMethod = (type: string): string => {
   switch (type) {
     case API_POST: return 'POST';
     case API_PUT: return 'PUT';
