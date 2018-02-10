@@ -9,6 +9,7 @@ node_js: '8'
 install: yarn
 after_success:
   - rm -rf build &&
+    yarn build &&
     cp -r dist build &&
     cp LICENSE README.md package.json build
 before_deploy:
@@ -21,3 +22,4 @@ deploy:
     on:
       tags: true
       repo: jacklam718/redux-network-middleware
+      all_branches: true
