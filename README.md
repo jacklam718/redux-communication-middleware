@@ -34,21 +34,24 @@ const store = createStore(
 ```
 
 ### Example - Basic
+#### Import
+```javascript
+import { API_GET, asyncActionType } from 'redux-network-middleware';
+```
 #### Constant
 ```javascript
+// create a async action type
 const FETCH_USER_PROFILE = asyncActionType('FETCH_USER_PROFILE');
 ```
 
 #### Action
 ```javascript
-import { API, asyncActionType } from 'redux-network-middleware';
-
 const fetchUserProfile = (id) => ({
-  type: API,
+  type: API_GET,
   payload: {
     endpoin: 'https://example.com/user/',
     data: {
-      id: 1,
+      id,
     },
     next: FETCH_USER_PROFILE,
   },
@@ -63,7 +66,7 @@ const initState = {
 };
 
 const user = (state = initState, action) => {
-  switch (FETCH_USER_PROFILE) {
+  switch (action.type) {
     case FETCH_USER_PROFILE.PENDING: {
       return {
         pending: true,
