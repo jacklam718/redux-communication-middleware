@@ -10,7 +10,9 @@ install: yarn
 after_success:
   - rm -rf build &&
     yarn build &&
-    cp -r dist build &&
+    mkdir build &&
+    cp -r src build/dist &&
+    cp -r dist build/dist &&
     cp LICENSE README.md package.json build
 before_deploy:
   cd build
